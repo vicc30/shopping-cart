@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.header {
+  width: 100%;
+  background-color: rgb(132, 223, 211);
+}
+
+.header ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.header li {
+  float: left;
+}
+
+.header li a {
+  display: block;
+  padding: 8px;
+}
