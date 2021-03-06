@@ -1,13 +1,11 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Head = () => {
     return (
         <div className="header">
-            <ul className="nav">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/shop">Shop</Link></li>
-                <li><Link to="/cart">Cart</Link></li>
-            </ul>
+            <Link to="/">Home</Link>
+            <Link to="/shop">Shop</Link>
+            <Link to="/cart">Cart</Link>
         </div>
     );
 }
