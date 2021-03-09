@@ -1,13 +1,18 @@
 import React from "react";
+import DisplayProducts from "./shared/DisplayProducts";
 
 const Shop = (props) => {
-    const { addToCart } = props
-
+    const { addToCart, productList } = props
     return (
         <>
-            <div>
+            <div className="container">
                 <h1>Welcome to Shop</h1>
-                <button onClick={() => addToCart()}>Add item</button>
+                <div className="products">
+                    <h3>Product List</h3>
+                    <div className="product-list">
+                        <DisplayProducts addToCart={addToCart} productList={productList} />
+                    </div>
+                </div>
             </div>
         </>
     );

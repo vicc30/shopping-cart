@@ -6,15 +6,13 @@ import Head from './components/Header';
 import Cart from './components/Cart';
 import Shop from './components/Shop';
 
-import { BEVERAGES } from './components/shared/beverages';
-import { FOOD } from './components/shared/food';
+import { PRODUCTS } from './components/shared/productList';
 
 import './App.css';
 
 const App = () => {
 
-    const [beverages] = useState(BEVERAGES);
-    const [food] = useState(FOOD);
+    const [productList] = useState(PRODUCTS);
     const [itemNumber, setItemNumber] = useState(0);
     const [cart, setCart] = useState([]);
 
@@ -24,7 +22,6 @@ const App = () => {
 
         setCart((prevCart) => {
             if (!isInCart) {
-                console.log("true");
                 return [...prevCart, { id: item.id, qty: num }];
             } else {
                 return cart.map((prod) =>
@@ -37,22 +34,30 @@ const App = () => {
         console.log(itemNumber);
     }
 
+    /*
+    const productWithId = ({match}) => {
+        const productSelected = beverages.filter((bev)=>{
+
+        });
+        <ProductDetail product={}/>
+    }
+*/
     return (
         <>
             <Head />
             <Switch>
                 <Route exact path="/" >
-                    <Home food={food}
-                        beverages={beverages}
-                        addToCart={addToCart} />
+                    <Home />
                 </Route>
                 <Route exact path="/cart" >
                     <Cart items={itemNumber}
                         addToCart={addToCart} />
                 </Route>
                 <Route exact path="/shop">
-                    <Shop addToCart={addToCart} />
+                    <Shop productList={productList}
+                        addToCart={addToCart} />
                 </Route>
+                {/*<Route path="/shop/:id" component={ProductWithId}></Route>*/}
             </Switch>
         </>
     );
