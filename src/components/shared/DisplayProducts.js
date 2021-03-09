@@ -1,9 +1,6 @@
+import { Link } from 'react-router-dom';
 function DisplayProducts(props) {
     const { addToCart, productList } = props;
-
-    const productDetail = (product) => {
-        console.log(product);
-    }
 
     return productList.map((product) => {
         return (
@@ -12,7 +9,9 @@ function DisplayProducts(props) {
                     <img width="10%" src={product.image} alt={product.name} />
                     <p>{product.name}</p>
                     <button onClick={() => addToCart(product, 1)}>Add to cart</button>
-                    <button onClick={() => productDetail(product)}>Product Detail</button>
+                    <Link to={`/shop/${product.id}`}>
+                        Product Detail
+                    </Link>
                 </div>
             </>
         );

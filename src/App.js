@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Head from './components/Header';
 import Cart from './components/Cart';
 import Shop from './components/Shop';
+import ProductDetail from './components/ProductDetail';
 
 import { PRODUCTS } from './components/shared/productList';
 
@@ -30,18 +31,15 @@ const App = () => {
             }
         });
         setItemNumber((prev) => prev + num);
-        console.log(cart);
-        console.log(itemNumber);
     }
 
-    /*
-    const productWithId = ({match}) => {
-        const productSelected = beverages.filter((bev)=>{
-
-        });
-        <ProductDetail product={}/>
+    const productWithId = ({ match }) => {
+        const selected = productList.filter((product) => match.params.id === product.id)
+        return (
+            <ProductDetail product={selected} addToCart={addToCart} />
+        );
     }
-*/
+
     return (
         <>
             <Head />
@@ -57,7 +55,7 @@ const App = () => {
                     <Shop productList={productList}
                         addToCart={addToCart} />
                 </Route>
-                {/*<Route path="/shop/:id" component={ProductWithId}></Route>*/}
+                <Route path="/shop/:id" component={productWithId}></Route>
             </Switch>
         </>
     );
