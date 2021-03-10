@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-    return (
+    return ( 
         <>
-            <div>
-                <h1>Welcome to Home</h1>
-                <p>This is the main page</p>
-                <p><Link to="/shop">Shop Now</Link></p>
+            <div className="container home">
+                <h1 className="title">Welcome to Home</h1>
+                <p>Welcome to the store! </p>
+                <p>Please enter the shop to view the products!</p>
+                <Link className="shop-btn" to="/shop">Shop Now</Link>
             </div>
         </>
     );

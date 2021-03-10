@@ -6,7 +6,7 @@ function DisplayProducts(props) {
         return (
             <>
                 <div className="product" key={product.id}>
-                    <img width="10%" src={product.image} alt={product.name} />
+                    <img src={product.image} alt={product.name} />
                     <p>{product.name}</p>
                     <button onClick={() => addToCart(product, 1)}>Add to cart</button>
                     <Link to={`/shop/${product.id}`}>

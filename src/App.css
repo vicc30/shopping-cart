@@ -7,10 +7,122 @@
   font-size: 16px;
 }
 
+:root {
+  --dark-blue: #28458e;
+  --light-blue: #0096d6;
+  --orange: #eb7b30;
+  --green: #00984a;
+  --red: #df002c;
+  --white: #fff;
+}
 .header {
   max-width: 100%;
-  background-color: rgb(132, 223, 211);
+  background-color: var(--light-blue);
   padding: 1rem;
+}
+
+.header a {
+  color: var(--white);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.header a:hover{
+  color: #ffffff99;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--dark-blue);
+}
+
+h2, h3 {
+  font-size: 1.5rem;
+  color: var(--light-blue);
+}
+
+.home a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home {
+  align-content: center;
+  justify-content: center;
+  background: url("./images/main.jpeg") no-repeat;
+  min-height: 90vh;
+  color: var(--white);
+  background-size: cover;
+}
+
+.container.home h1.title {
+  color: var(--white);
+}
+
+.home p {
+  margin-top: 2rem;
+}
+
+.home .shop-btn {
+  margin-top: 2rem;
+  background-color: var(--green);
+  padding: .4rem;
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.home .shop-btn:hover {
+  background-color: var(--orange);
+}
+
+button,
+.btn {
+  padding: 0.4rem;
+  min-width: 1rem;
+  border: none;
+  background-color: var(--dark-blue);
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.detail .move {
+  border-radius: 10rem;
+  padding: 0;
+  margin: .5rem;
+  font-size: 1rem;
+}
+
+.detail:nth-child(2) {
+  color: var(--orange);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+div.detail button.btn {
+  color:--var(--white);
+}
+
+button:hover,
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--green);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.container > * {
+  margin: 0.5rem 0;
+}
+
+.container img {
+  max-height: 20rem;
 }
 
 .header a {
@@ -26,12 +138,17 @@
   margin: 1rem;
 }
 
+.products h3 {
+text-align: center;
+}
+
 .product-list {
   display: flex;
   flex-wrap: wrap;
   flex: 1;
   justify-content: center;
 }
+
 .product-list img {
   width: 15rem;
 }
@@ -44,7 +161,17 @@
   align-items: center;
 }
 
+.product p {
+  color: var(--dark-blue);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 .product > * {
   margin-top: 1rem;
   font-size: 1rem;
+}
+
+.detail p{
+  color: var(--orange);
 }
