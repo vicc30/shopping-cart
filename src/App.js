@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Home from './components/Home';
 import Head from './components/Header';
@@ -31,6 +33,7 @@ const App = () => {
             }
         });
         setItemNumber((prev) => prev + num);
+        toast(`Added ${num} piece(s) of ${item.name}`);
     }
 
     const deleteCartItem = (id, qty) => {
@@ -43,7 +46,9 @@ const App = () => {
     const productWithId = ({ match }) => {
         const selected = productList.filter((product) => match.params.id === product.id);
         return (
-            <ProductDetail product={selected} addToCart={addToCart} items={itemNumber} />
+            <>
+                <ProductDetail product={selected} addToCart={addToCart} items={itemNumber} />
+            </>
         );
     }
 
@@ -66,6 +71,7 @@ const App = () => {
                 </Route>
                 <Route path="/shop/:id" component={productWithId}></Route>
             </Switch>
+            <ToastContainer />
         </>
     );
 };
