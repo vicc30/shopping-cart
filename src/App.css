@@ -16,9 +16,12 @@
   --white: #fff;
 }
 .header {
-  max-width: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: var(--light-blue);
-  padding: 1rem;
+  padding: 1rem 0;
+  z-index: 100;
 }
 
 .header a {
@@ -50,14 +53,16 @@ h3 {
 .home {
   align-content: center;
   justify-content: center;
-  background: url("./images/main.jpeg") no-repeat;
-  min-height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./images/main.jpeg");
+  min-height: 93vh;
   color: var(--white);
   background-size: cover;
 }
 
 .container.home h1.title {
   color: var(--white);
+  text-align: center;
 }
 
 .home p {
@@ -105,6 +110,10 @@ div.detail button.btn {
   color: --var(--white);
 }
 
+div.detail p {
+  width: 70vw;
+}
+
 button:hover,
 .btn:hover {
   cursor: pointer;
@@ -119,7 +128,7 @@ button:hover,
 }
 
 .container > * {
-  margin: 0.5rem 0;
+  margin: 1.8rem 0;
 }
 
 .container img {
@@ -173,6 +182,18 @@ button:hover,
   font-size: 1rem;
 }
 
+.product a {
+  text-decoration: none;
+}
+
+.product img:hover {
+  transform: scale(1.15);
+}
+
+.product a:hover {
+  color: var(--orange);
+}
+
 .detail p {
   color: var(--orange);
 }
@@ -192,7 +213,7 @@ table tr:nth-child(even) {
 
 table tr:hover {
   background-color: var(--light-blue);
-  color: var(--white)
+  color: var(--white);
 }
 
 table th {
@@ -201,4 +222,40 @@ table th {
   text-align: left;
   background-color: var(--green);
   color: white;
+}
+
+.floating {
+  position: fixed;
+  right: 2rem;
+  top: 6rem;
+  color: var(--white);
+  background-color: var(--green);
+  padding: 16px;
+  border-radius: 3rem;
+}
+
+.floating:hover {
+  background-color: var(--dark-blue);
+}
+
+.floating svg {
+  font-size: 3rem;
+  color: var(--white);
+}
+
+.floating .number {
+  position: fixed;
+  color: var(--green);
+  font-size: 0.8rem;
+  min-width: 1rem;
+  text-align: center;
+  font-weight: 600;
+  z-index: 100;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 1px;
+}
+
+.floating a {
+  text-decoration: none;
 }

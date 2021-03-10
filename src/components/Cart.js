@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Cart = (props) => {
   const { items, cart, deleteCartItem } = props;
@@ -52,7 +53,7 @@ const Cart = (props) => {
             </tr>
           </tfoot>
         </table>
-
+        <Link to="/shop">Conitue Shopping</Link>
       </div>
     </>
   );

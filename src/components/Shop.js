@@ -1,8 +1,10 @@
 import React from "react";
 import DisplayProducts from "./shared/DisplayProducts";
+import FloatingIcon from './shared/FloatingIcon';
 
 const Shop = (props) => {
-    const { addToCart, productList } = props
+    const { addToCart, productList, items } = props;
+
     return (
         <>
             <div className="container">
@@ -13,6 +15,7 @@ const Shop = (props) => {
                         <DisplayProducts addToCart={addToCart} productList={productList} />
                     </div>
                 </div>
+                <FloatingIcon items={items} />
             </div>
         </>
     );

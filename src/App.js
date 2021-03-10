@@ -23,7 +23,7 @@ const App = () => {
 
         setCart((prevCart) => {
             if (!isInCart) {
-                return [...prevCart, { id: item.id, name: item.name, qty: num, image: item.image, price: item.price}];
+                return [...prevCart, { id: item.id, name: item.name, qty: num, image: item.image, price: item.price }];
             } else {
                 return cart.map((prod) =>
                     (prod.id === item.id ? { ...prod, qty: prod.qty + num } : prod)
@@ -41,9 +41,9 @@ const App = () => {
     }
 
     const productWithId = ({ match }) => {
-        const selected = productList.filter((product) => match.params.id === product.id)
+        const selected = productList.filter((product) => match.params.id === product.id);
         return (
-            <ProductDetail product={selected} addToCart={addToCart} />
+            <ProductDetail product={selected} addToCart={addToCart} items={itemNumber} />
         );
     }
 
@@ -61,7 +61,8 @@ const App = () => {
                 </Route>
                 <Route exact path="/shop">
                     <Shop productList={productList}
-                        addToCart={addToCart} />
+                        addToCart={addToCart}
+                        items={itemNumber} />
                 </Route>
                 <Route path="/shop/:id" component={productWithId}></Route>
             </Switch>
