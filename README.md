@@ -23,12 +23,31 @@ This project uses `yarn`. In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+### `yarn run build` + `yarn run deploy`
+
+Optimization for github pages with help of package `gh-pages`. 
+First run `yarn run build` and then `yarn run deploy`. Deploy is on branch `gh-pages`.
+
+### Technologies and Packages.
+
+
+* [React JS](https://reactjs.org/)
+* [React Router Dom](https://reactrouter.com/web/guides/quick-start)
+* [React Toastify](https://www.npmjs.com/package/react-toastify)
+* For Icons [Iconfy](https://iconify.design/)
+
 ## Resources and References
 
 * [React Router Documentation](https://reactrouter.com/web/guides/quick-start)
+* [Odin Project: Lesson Router](https://www.theodinproject.com/courses/javascript/lessons/router)
+* [Deploying a create-react-app with routing to GitHub pages](https://medium.com/@bennirus/deploying-a-create-react-app-with-routing-to-github-pages-f386b6ce84c2)
+* [W3s Schools](https://www.w3schools.com/css/)
+* [Stack Overflow](https://stackoverflow.com/)
+* For images and products [Pepsico](https://www.pepsico.com/)
 
 ## Live preview
 
+Live preview is available on GitHub pages. See the [Live Preview](https://vicc30.github.io/shopping-cart/).
 
 ### Special Mentions :clap:
 
