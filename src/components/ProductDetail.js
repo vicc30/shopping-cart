@@ -23,7 +23,7 @@ const ProductDetail = (props) => {
                 {counter}
                 <button className="move" onClick={handleAdd}> + </button>
             </div>
-            <button className="btn" onClick={() => { addToCart(product, counter) }}>Add to Cart</button>
+            <button className="btn" onClick={() => { addToCart(product[0], counter) }}>Add to Cart</button>
         </div>
     );
 }

@@ -23,7 +23,7 @@ const App = () => {
 
         setCart((prevCart) => {
             if (!isInCart) {
-                return [...prevCart, { id: item.id, qty: num }];
+                return [...prevCart, { id: item.id, name: item.name, qty: num, image: item.image, price: item.price}];
             } else {
                 return cart.map((prod) =>
                     (prod.id === item.id ? { ...prod, qty: prod.qty + num } : prod)
@@ -31,6 +31,13 @@ const App = () => {
             }
         });
         setItemNumber((prev) => prev + num);
+    }
+
+    const deleteCartItem = (id, qty) => {
+        setCart((prevCart) => {
+            return prevCart.filter((i) => i.id !== id);
+        });
+        setItemNumber((prev) => prev - qty);
     }
 
     const productWithId = ({ match }) => {
@@ -49,7 +56,8 @@ const App = () => {
                 </Route>
                 <Route exact path="/cart" >
                     <Cart items={itemNumber}
-                        addToCart={addToCart} />
+                        cart={cart}
+                        deleteCartItem={deleteCartItem} />
                 </Route>
                 <Route exact path="/shop">
                     <Shop productList={productList}
